@@ -1,5 +1,6 @@
 import random
 
+
 # Checking if string is palindrome:
 def is_palindrome(text):
     count = 0
@@ -8,9 +9,9 @@ def is_palindrome(text):
         if text[i] == reverse[i]:
             count += 1
     if count == len(text):
-        print("Este palindrom")
+        return "palindrome"
     else:
-        print("Nu este palindrom")
+        return "not palindrome"
 
 
 # Longest word in a sequence:
@@ -22,7 +23,7 @@ def longest_word(text):
         if len(word) > max:
             max = len(word)
             result = word
-    print(result)
+    return result
 
 
 # Check if two strings are anagrams of each other:
@@ -33,17 +34,17 @@ def anagrams(text1, text2):
             if i in text2:
                 counter += 1
         if counter == len(text1):
-            print("YES")
+            return "YES"
         else:
-            print("NO")
+            return "NO"
     else:
-        print("NO")
+        return "NO"
 
 
 # Reverse a string:
 def reverse_string(text):
     new_text = text[::-1]
-    print(new_text)
+    return new_text
 
 
 # Find the most common word in a phrase:
@@ -55,7 +56,7 @@ def most_common_word(text):
             max = words.count(word)
             result = word
 
-    print(f"Cuvant = {result}")
+    return result
 
 
 # Generate a random password:
@@ -64,15 +65,11 @@ def password_generator(n):
     password = ""
     for i in range(n):
         password += random.choice(chars)
-    print(password)
+    return password
 
-
-
-is_palindrome("kayak")
-longest_word("Robert are pere")
-anagrams("ana", "naa")
-reverse_string("caine")
-most_common_word(" HEllo, eu sunt Robert numele meu este Robert eu robert")
-password_generator(10)
-
-
+print(is_palindrome("kayak"))
+print(longest_word("Robert are pere"))
+print(anagrams("ana", "naa"))
+print(reverse_string("caine"))
+print(most_common_word(" HEllo, eu sunt Robert numele meu este Robert eu robert"))
+print(password_generator(10))
